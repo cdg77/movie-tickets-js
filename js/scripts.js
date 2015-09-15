@@ -18,8 +18,9 @@ $(document).ready(function(event) {
     var inputAge = $("select#new-age").text();
     var inputShowtime = $("select#new-showtime option:selected").text();
     var newTicket = new Ticket(inputNameOfMovie, inputAge, inputShowtime);
+    newTicket.ticketPrice();
 
-  $('#ticket-confirmation').text('You have successfuly purchased tickets for : ' + newTicket.nameOfMovie + " showing at " + newTicket.showtime);
+  $('#ticket-confirmation').text('You have successfuly purchased tickets for : ' + newTicket.nameOfMovie + " showing at " + newTicket.showtime + "... Now pay up! Its going to cost you: " + newTicket.price);
 
   });
 
